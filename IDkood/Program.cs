@@ -10,12 +10,14 @@ public class Program
             Console.WriteLine("Write your IDkood");
             string numbersforid= Console.ReadLine();
             IdCode yourid = new IdCode(numbersforid);
-
+            List<IdCode> rightcodes = new List<IdCode>();
+            List<IdCode> wrongcodes = new List<IdCode>();
             if (yourid.IsValid())
             {
+                rightcodes.Add(yourid);
                 while (true)
                 {
-                    Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your ");
+                    Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your \nelse");
                     string user_choice = Console.ReadLine();
                     if (user_choice=="1")
                     {
@@ -37,7 +39,8 @@ public class Program
                 
             }
             else
-            { Console.WriteLine("you id wrong"); }
+            { wrongcodes.Add(yourid);
+                Console.WriteLine("you id wrong"); }
             }
 
 
