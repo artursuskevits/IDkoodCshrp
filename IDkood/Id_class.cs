@@ -1,17 +1,30 @@
 ﻿using System;
+using System.Reflection.Emit;
+
 public class IdCode
 {
-    private readonly string _idCode;
+    private string _idCode;
 
     public IdCode(string idCode)
     {
         _idCode = idCode;
     }
 
+    public IdCode()
+    {
+        _idCode = ""; // Provide a default value if needed
+    }
+
+    public string IDCODE
+    {
+        get => _idCode;
+        set => _idCode = value;
+    }
     private bool IsValidLength()
     {
         return _idCode.Length == 11;
     }
+
 
     private bool ContainsOnlyNumbers()
     {
@@ -140,8 +153,83 @@ public class IdCode
         int year = GetFullYear();
         return new DateOnly(year, month, day);
     }
-    public void fullCheck()
+  
+    public static void HOwOLdAreYou(IdCode id)
     {
+        DateOnly birthdate = id.GetBirthDate();
+        DateTime today = DateTime.Today;
+        int age = today.Year - birthdate.Year;
+        if (birthdate.Month > today.Month || (birthdate.Month == today.Month && birthdate.Day > today.Day))
+        {
+            age--;
+        }
 
+        Console.WriteLine( age);
+    }
+
+    public static string Sunnikoht(string ikood)
+    {
+        char[] ikoodArray = ikood.ToCharArray();
+        string tahed_8910 = new string(new char[] { ikoodArray[7], ikoodArray[8], ikoodArray[9] });
+        int t = int.Parse(tahed_8910);
+        string haigla = "";
+
+        if (1 < t && t < 10)
+        {
+            haigla = "Kuresaare Haigla";
+        }
+        else if (11 < t && t < 19)
+        {
+            haigla = "Tartu Ülikooli Naistekliinik, Tartumaa, Tartu";
+        }
+        else if (21 < t && t < 220)
+        {
+            haigla = "Ida-Tallinna Keskhaigla, Pelgulinna sünnitusmaja, Hiiumaa, Keila, Rapla haigla, Loksa haigla";
+        }
+        else if (221 < t && t < 270)
+        {
+            haigla = "Ida-Viru Keskhaigla (Kohtla-Järve, endine Jõhvi)";
+        }
+        else if (271 < t && t < 370)
+        {
+            haigla = "Maarjamõisa Kliinikum (Tartu), Jõgeva Haigla";
+        }
+        else if (371 < t && t < 420)
+        {
+            haigla = "Narva Haigla";
+        }
+        else if (421 < t && t < 470)
+        {
+            haigla = "Pärnu Haigla";
+        }
+        else if (471 < t && t < 490)
+        {
+            haigla = "Pelgulinna Sünnitusmaja (Tallinn), Haapsalu haigla";
+        }
+        else if (491 < t && t < 520)
+        {
+            haigla = "Järvamaa Haigla (Paide)";
+        }
+        else if (521 < t && t < 570)
+        {
+            haigla = "Rakvere, Tapa haigla";
+        }
+        else if (571 < t && t < 600)
+        {
+            haigla = "Valga Haigla";
+        }
+        else if (601 < t && t < 650)
+        {
+            haigla = "Viljandi Haigla";
+        }
+        else if (651 < t && t < 700)
+        {
+            haigla = "Lõuna-Eesti Haigla (Võru), Põlva Haigla";
+        }
+        else
+        {
+            haigla = "Ei ole sündinud Eestis";
+        }
+        return haigla;
     }
 }
