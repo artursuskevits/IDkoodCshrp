@@ -1,22 +1,26 @@
-﻿using System.Text.RegularExpressions;
+﻿using IDkood;
+using System.Text.RegularExpressions;
 
 public class Program
 {
     public static void Main()
     {
-        
+        List<IdCode> rightcodes = new List<IdCode>();
+        List<IdCode> wrongcodes = new List<IdCode>();
+
         while (true)
         {
+            Filetoo.clear_2_dictionary(rightcodes, wrongcodes);
+            Filetoo.create_2_dictionary(rightcodes,wrongcodes);
             Console.WriteLine("Write your IDkood");
             string numbersforid= Console.ReadLine();
             IdCode yourid = new IdCode(numbersforid);
-            List<IdCode> rightcodes = new List<IdCode>();
-            List<IdCode> wrongcodes = new List<IdCode>();
             if (yourid.IsValid())
             {
                 rightcodes.Add(yourid);
                 while (true)
                 {
+                    Filetoo.Saveheaisikukood(rightcodes, wrongcodes);
                     Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your \nelse");
                     string user_choice = Console.ReadLine();
                     if (user_choice=="1")
@@ -33,13 +37,16 @@ public class Program
                     }
                     else
                     {
+
                         break;
                     }
                 }
                 
             }
             else
-            { wrongcodes.Add(yourid);
+            {
+                wrongcodes.Add(yourid);
+                Filetoo.Saveheaisikukood(rightcodes, wrongcodes);
                 Console.WriteLine("you id wrong"); }
             }
 

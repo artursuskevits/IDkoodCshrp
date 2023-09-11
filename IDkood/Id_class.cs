@@ -153,7 +153,7 @@ public class IdCode
         int year = GetFullYear();
         return new DateOnly(year, month, day);
     }
-  
+
     public static void HOwOLdAreYou(IdCode id)
     {
         DateOnly birthdate = id.GetBirthDate();
@@ -164,7 +164,7 @@ public class IdCode
             age--;
         }
 
-        Console.WriteLine( age);
+        Console.WriteLine(age);
     }
 
     public static string Sunnikoht(string ikood)
@@ -231,5 +231,38 @@ public class IdCode
             haigla = "Ei ole sündinud Eestis";
         }
         return haigla;
+    }
+    public static string CodeCreation()
+    {
+        while (true) {
+            string idik = "p";
+            Console.WriteLine("if you are women press - 1\nif you are arem men press 2");
+            string answer = Console.ReadLine();
+            if (answer=="1")
+            {
+                Console.WriteLine("write you bithday year");
+                string year = Console.ReadLine();
+                Console.WriteLine("write you bithday month");
+                string month = Console.ReadLine();
+                Console.WriteLine("write you bithday day");
+                string day = Console.ReadLine();
+            }
+            else if (answer == "2")
+            {
+                Console.WriteLine("write you bithday year");
+                string year = Console.ReadLine();
+                Console.WriteLine("write you bithday month");
+                string month = Console.ReadLine();
+                Console.WriteLine("write you bithday day");
+                string day = Console.ReadLine();
+
+            }
+            else
+            {
+                    
+            }
+            return idik;
+        }
+        
     }
 }
