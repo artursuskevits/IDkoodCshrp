@@ -28,7 +28,7 @@ namespace IDkood
             }
 
             Console.WriteLine("Data saved to file.");
-            Console.ReadLine();
+            Console.WriteLine();
         }
         public static (List<IdCode>, List<IdCode>) create_2_dictionary(List<IdCode> esimine, List<IdCode> teine)
         {
@@ -53,9 +53,10 @@ namespace IDkood
 
         public static (List<IdCode>, List<IdCode>) clear_2_dictionary(List<IdCode> esimine, List<IdCode> teine)
         {
+            Console.WriteLine();
             esimine.Clear();
             teine.Clear();
-
+            
             return (esimine, teine);
         }
 
