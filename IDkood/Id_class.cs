@@ -232,37 +232,53 @@ public class IdCode
         }
         return haigla;
     }
-    public static string CodeCreation()
-    {
-        while (true) {
-            string idik = "p";
-            Console.WriteLine("if you are women press - 1\nif you are arem men press 2");
-            string answer = Console.ReadLine();
-            if (answer=="1")
-            {
-                Console.WriteLine("write you bithday year");
-                string year = Console.ReadLine();
-                Console.WriteLine("write you bithday month");
-                string month = Console.ReadLine();
-                Console.WriteLine("write you bithday day");
-                string day = Console.ReadLine();
-            }
-            else if (answer == "2")
-            {
-                Console.WriteLine("write you bithday year");
-                string year = Console.ReadLine();
-                Console.WriteLine("write you bithday month");
-                string month = Console.ReadLine();
-                Console.WriteLine("write you bithday day");
-                string day = Console.ReadLine();
+    //public static string CodeCreation()
+    //{
+    //    while (true)
+    //    {
+    //        string idik = "p";
+    //        Console.WriteLine("if you are women press - 1\nif you are arem men press 2");
+    //        string answer = Console.ReadLine();
+    //        if (answer == "1")
+    //        {
+    //            Console.WriteLine("write you bithday year");
+    //            string year = Console.ReadLine();
+    //            Console.WriteLine("write you bithday month");
+    //            string month = Console.ReadLine();
+    //            Console.WriteLine("write you bithday day");
+    //            string day = Console.ReadLine();
+    //        }
+    //        else if (answer == "2")
+    //        {
+    //            Console.WriteLine("write you bithday year");
+    //            string year = Console.ReadLine();
+    //            Console.WriteLine("write you bithday month");
+    //            string month = Console.ReadLine();
+    //            Console.WriteLine("write you bithday day");
+    //            string day = Console.ReadLine();
 
-            }
-            else
-            {
-                    
-            }
-            return idik;
+    //        }
+    //        else
+    //        {
+
+    //        }
+    //        return idik;
+    //    }
+
+
+    
+    public static void FoundSex(string ikood)
+    {
+        char[] ikoodArray = ikood.ToCharArray();
+        string tahed_1 = new string(new char[] { ikoodArray[0]});
+        int t = int.Parse(tahed_1);
+        if (t == 1 | t == 3 | t == 5)
+        {
+            Console.WriteLine("Sa oled mees");
         }
-        
+        else
+        {
+            Console.WriteLine("Sa oled naine");
+        }
     }
 }

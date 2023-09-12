@@ -17,7 +17,7 @@ public class Program
             if (yourid.IsValid())
             {
                 
-                while (true)
+                while (yourid.IsValid())
                 {
                     rightcodes.Add(yourid);
                     Filetoo.Saveheaisikukood(rightcodes, wrongcodes);
@@ -34,6 +34,10 @@ public class Program
                     if (user_choice == "3")
                     {
                         Console.WriteLine(IdCode.Sunnikoht(yourid.IDCODE));
+                    }
+                    if (user_choice == "4")
+                    {
+                        IdCode.FoundSex(yourid.IDCODE);
                     }
                     else
                     {
