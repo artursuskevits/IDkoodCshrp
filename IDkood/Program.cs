@@ -7,7 +7,6 @@ public class Program
     {
         List<IdCode> rightcodes = new List<IdCode>();
         List<IdCode> wrongcodes = new List<IdCode>();
-
         while (true)
         {
             Filetoo.clear_2_dictionary(rightcodes, wrongcodes);
@@ -17,11 +16,12 @@ public class Program
             IdCode yourid = new IdCode(numbersforid);
             if (yourid.IsValid())
             {
-                rightcodes.Add(yourid);
+                
                 while (true)
                 {
+                    rightcodes.Add(yourid);
                     Filetoo.Saveheaisikukood(rightcodes, wrongcodes);
-                    Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your \nelse");
+                    Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your sunnikoht \nelse");
                     string user_choice = Console.ReadLine();
                     if (user_choice=="1")
                     {
@@ -37,11 +37,9 @@ public class Program
                     }
                     else
                     {
-
                         break;
                     }
-                }
-                
+                }  
             }
             else
             {
@@ -49,9 +47,6 @@ public class Program
                 Filetoo.Saveheaisikukood(rightcodes, wrongcodes);
                 Console.WriteLine("you id wrong"); }
             }
-
-
-
         //Console.WriteLine(new IdCode("27605030298").GetFullYear());  // 1876
         //Console.WriteLine(new IdCode("37605030299").GetFullYear());  // 1976
         //Console.WriteLine(new IdCode("50005200009").GetFullYear());  // 2000
