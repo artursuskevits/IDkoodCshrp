@@ -52,7 +52,6 @@ namespace IDkood
 
         public static (List<IdCode>, List<IdCode>) clear_2_dictionary(List<IdCode> esimine, List<IdCode> teine)
         {
-            Console.WriteLine();
             esimine.Clear();
             teine.Clear();
             

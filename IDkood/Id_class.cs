@@ -9,10 +9,9 @@ public class IdCode
     {
         _idCode = idCode;
     }
-
     public IdCode()
     {
-        _idCode = ""; // Provide a default value if needed
+        _idCode = ""; 
     }
 
     public string IDCODE
@@ -272,7 +271,7 @@ public class IdCode
         char[] ikoodArray = ikood.ToCharArray();
         string tahed_1 = new string(new char[] { ikoodArray[0]});
         int t = int.Parse(tahed_1);
-        if (t == 1 | t == 3 | t == 5)
+        if (t == 1 || t == 3 || t == 5)
         {
             Console.WriteLine("Sa oled mees");
         }

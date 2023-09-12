@@ -14,15 +14,16 @@ public class Program
             Console.WriteLine("Write your IDkood");
             string numbersforid= Console.ReadLine();
             IdCode yourid = new IdCode(numbersforid);
+            string user_choice = "2";
             if (yourid.IsValid())
             {
                 
-                while (yourid.IsValid())
+                while (user_choice=="1"|| user_choice == "2"||user_choice == "3"|| user_choice == "4")
                 {
                     rightcodes.Add(yourid);
                     Filetoo.Saveheaisikukood(rightcodes, wrongcodes);
-                    Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your sunnikoht \nelse");
-                    string user_choice = Console.ReadLine();
+                    Console.WriteLine("Press 1 - to show your age\nPress 2 - to show birthday date\nPress 3 to chek your sunnikoht \nelse - break programm");
+                    user_choice = Console.ReadLine();
                     if (user_choice=="1")
                     {
                         IdCode.HOwOLdAreYou(yourid);
@@ -38,10 +39,6 @@ public class Program
                     if (user_choice == "4")
                     {
                         IdCode.FoundSex(yourid.IDCODE);
-                    }
-                    else
-                    {
-                        break;
                     }
                 }  
             }
